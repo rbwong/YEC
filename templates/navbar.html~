@@ -12,20 +12,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="/#page-top"><img width="150px" style="margin-top: -35px;" src="{% static "img/shark.png" %}"></img></a>
+            <a class="navbar-brand page-scroll" href="/#page-top"><img width="150px" style="margin-top: -25px;" src="{% static "img/shark.png" %}"></img></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="/#about">About</a>
+                    <a class="page-scroll" href="/#accessories">Vehicle</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/#process">Process</a>
+                    <a class="page-scroll" href="/#products">More Products</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/#form">Join us!</a>
+                    <a class="page-scroll" href="/promos">Promos</a>
                 </li>
             </ul>
         </div>

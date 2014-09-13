@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% load staticfiles %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
 
 
 {% block body %}
@@ -9,7 +15,7 @@
         <section id="header">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-heading">Shark Car Accessories</div>
+                    <div class="intro-heading">Young Entreprenuers Convention</div>
                     <a href="https://www.facebook.com/sharkphil" class="page-scroll btn btn-xl">Go to our facebook page</a>
                 </div>
             </div>
@@ -68,7 +74,7 @@
     </section>
 
     <!-- accessories Section -->
-    <section id="accessories" class="bg-light-gray">
+    <section id="about" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -101,41 +107,8 @@
         </div>
     </section>
 
-    <!-- products Grid Section -->
-    <section id="products">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"> More Products</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                {% if product_list %}
-                    {% for product in product_list %}
-
-                        <div class="col-md-3 design-item col-sm-6 products-item">
-                            <a href="/product/{{ product.id }}" class="products-link" data-toggle="modal">
-                                <div class="products-hover">
-                                    <div class="products-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="{{ MEDIA_URL }}{{ product.banner }}" class="img-responsive" alt="">
-                            </a>
-                            <div class="products-caption">
-                                <h4>{{ product.name }}</h4>
-                            </div>
-                        </div>
-
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
-    <section id="about" class="bg-light-gray">
+    <section id="process">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -211,48 +184,66 @@
             </div>
         </div>
     </section>
-{% endblock %}
 
-{% block modal %}
-    {% for make in make_list %}
-
-        <div class="products-modal modal fade" id="{{ make.id }}-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
+    <!-- products Grid Section -->
+    <section id="form" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"> Submit your Proposal</h2>
+                    {% if wizard.steps.current == '0' %}
+                        <h3 class="section-subheading text-muted">Application open only until October 18, 2014</h3>
+                    {% endif %}
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="modal-body">
-                        <h2>{{ make.name }}</h2>
-                        <p class="item-intro text-muted">{{ make.description }}</p>
-                        <div class="row">
-                            {% for series in series_list %}
-                                {% if series.make == make %}
-                                    <div class="col-md-2 series-item">
-                                        <a href="/series/{{ series.id }}/" class="series-link">
-                                            <div class="series-hover">
-                                                <div class="series-hover-content">
-                                                    <img class="img-responsive" src="{{ MEDIA_URL }}{{ series.hover_image }}">
-                                                </div>
-                                            </div>
-                                            <img class="img-responsive" src="{{ MEDIA_URL }}{{ series.image }}">
-                                        </a>
-                                        <div class="series-caption">
-                                            <h4>{{ series.name }}</h4>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-7">
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          {{ message }}
                         </div>
-                    </div>
+                    {% endfor %}
+
+                    {% if wizard.steps.current == '1' %}
+                        You can skip this step if you are doing this by yourself.
+                    {% endif %}
+
+                    {% if wizard.steps.current == '2' %}
+                    <p class="section-subheading text-muted">Keep in mind that this is your official entry, make sure to formulate clear and complete answers.</p>
+                    <p class="section-subheading text-muted"><i>Tip: The judgeswill rely heavily on what you write and explain here. It is your job to catch their attention and keep them interested with your mobile app concept. If by the time they finish reading your entry, you leave them wanting to have your app developed-- then good job you! You just might be one to take home the grand prize.</i></p>
+                    {% endif %}
+
+                    <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+                    {% if wizard.steps.current == '0' %}
+                        <p>First Applicant</p>
+                    {% endif %}
+                    {% if wizard.steps.current == '1' %}
+                        <p>Second Applicant</p>
+                    {% endif %}
+                    <form action="/#form" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <table>
+                        {{ wizard.management_form }}
+                        {% if wizard.form.forms %}
+                            {{ wizard.form.management_form }}
+                            {% for form in wizard.form.forms %}
+                                {% bootstrap_form form %}
+                            {% endfor %}
+                        {% else %}
+                            {% bootstrap_form wizard.form %}
+                        {% endif %}
+                        </table>
+                        {% if wizard.steps.prev %}
+                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
+                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
+                        {% endif %}
+                    <input type="submit" value="{% trans "submit" %}"/>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    {% endfor %}
+
 {% endblock %}
