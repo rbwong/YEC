@@ -94,7 +94,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+
 
 STATICFILES_DIRS = (
     STATIC_PATH,
@@ -107,6 +107,9 @@ TEMPLATE_DIRS = (
     TEMPLATE_PATH,
 )
 
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
@@ -114,4 +117,6 @@ ALLOWED_HOSTS = ['*']
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
 STATIC_URL = '/static/'
