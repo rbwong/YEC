@@ -27,4 +27,10 @@ class MakeAdmin(admin.ModelAdmin):
                     'app_market',
                     'concept',)
 
+     def id_pic1(self, instance):
+        return instance.image.url
+
+     def id_pic2(self, instance):
+        return instance.image.url
+
 admin.site.register(Make, MakeAdmin)
