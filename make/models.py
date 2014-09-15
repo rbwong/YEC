@@ -38,4 +38,5 @@ class Make(models.Model):
     def admin_image2(self):
         return '<img src="%s"/>' % self.id_pic2
 
-    admin_image.allow_tags = True
+    admin_image1.allow_tags = True
+    admin_image2.allow_tags = True
