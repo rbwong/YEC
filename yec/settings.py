@@ -72,8 +72,17 @@ WSGI_APPLICATION = 'yec.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # Or path to database file if using sqlite3.
+        'NAME': 'yec',
+        # The following settings are not used with sqlite3:
+        'USER': 'rbwong',
+        'PASSWORD': '5233313.',
+        # Empty for localhost through domain sockets or
+        # '127.0.0.1' for localhost through TCP.
+        'HOST': 'localhost',
+        'PORT': '',                      # Set to empty string for default.
     }
 }
 # Internationalization
@@ -93,8 +102,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+
 STATIC_URL = '/static/'
 
+STATIC_ROOT = "/opt/shark/static/"
+
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
+MEDIA_URL = '/static/media/'
 
 STATICFILES_DIRS = (
     STATIC_PATH,
@@ -106,17 +122,3 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     TEMPLATE_PATH,
 )
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-# Static asset configuration
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATIC_URL = '/static/'
