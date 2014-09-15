@@ -28,9 +28,9 @@ class MakeAdmin(admin.ModelAdmin):
                     'concept',)
 
     def id_pic1(self, instance):
-        return instance.image.url
+        return self.image.url
 
     def id_pic2(self, instance):
-        return instance.image.url
+        return self.image.url
 
 admin.site.register(Make, MakeAdmin)
