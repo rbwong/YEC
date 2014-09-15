@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-heading">Young Entreprenuers Convention</div>
-                    <a href="https://www.facebook.com/sharkphil" class="page-scroll btn btn-xl">Go to our facebook page</a>
+                    <a href="#" class="page-scroll btn btn-xl">Go to our facebook page</a>
                 </div>
             </div>
         </section>
@@ -35,15 +35,6 @@
                 <div class="col-md-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Telephone</h4>
-                    <p class="text-muted">+63 2 374-3636</p>
-                    <p class="text-muted">+63 3 372-2464</p>
-                </div>
-                <div class="col-md-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-mobile-phone fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Mobile</h4>
@@ -57,63 +48,33 @@
                         <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Email</h4>
-                    <p class="text-muted">sharkphil@gmail.com</p>
-                </div>
-                <div class="col-md-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Address</h4>
-                    <p class="text-muted">VERSA VANTAGE TRADING</p>
-                    <p class="text-muted">1013 EDSA, Project 7</p>
-                    <p class="text-muted">Quezon City Philippines</p>
+                    <p class="text-muted">upce.ic24@gmail.com</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- accessories Section -->
     <section id="about" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Car Accessories</h2>
-                    <h3 class="section-subheading text-muted">Choose the make of your vehicle</h3>
+                    <h2 class="section-heading">About</h2>
+
                 </div>
             </div>
 
             <div class="row">
-                {% if make_list %}
-                    {% for make in make_list %}
-
-                        <div class="col-md-3 design-item col-sm-6 products-item">
-                            <a href="#{{ make.id }}-modal" class="products-link" data-toggle="modal">
-                                <div class="products-hover">
-                                    <div class="products-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="{{ MEDIA_URL }}{{ make.image }}" class="img-responsive" alt="">
-                            </a>
-                            <div class="products-caption">
-                                <h4>{{ make.name }}</h4>
-                            </div>
-                        </div>
-
-                    {% endfor %}
-                {% endif %}
+                <img src="{% static "img/banner.jpg" %}" class="img-responsive" alt="">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="process">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Versa Vantage is an all-Filipino Company engaged in the manufacturing and distribution of car accessories under the brand names "SHARK" and "SURESTEP". The company is a major player in the Philippine car accessory market and its products are well-known for their innovative, classy, but functional designs and exceptional quality.</h3>
+                    <h2 class="section-heading">Process</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row">
@@ -125,11 +86,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>1993</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4 class="subheading">1 THINK</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">The company's founder launched a unique product aptly called "DASHIELD", a multi-layered dashboard cover that has been granted a Philippine patent (Phil. Patent No. 26378). Its main function aside from aesthetically enhancing the appearance of a vehicle's dashboard is to maximize the efficiency of the car air-conditioning system. Since its launch in 1993, DASHIELD has since been considered as a standard accessory for most car vehicles.</p>
+                                    <p class="text-muted">Think of a mobile appplication.</p>
                                 </div>
                             </div>
                         </li>
@@ -139,10 +99,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4 class="subheading">2 Build</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">With the success of DASHIELD, other innovative car accessories were soon developed and introduced. Currently, Versa Vantage distributes a wide range of vehicle accessory products, such as stepboards, steptubes, roof caddies, bullbars, top roof carriers, cargo trays, side skirts, side mouldings, claddings, spoilers, console boxes, engine / aircon dust covers, among others.</p>
+                                    <p class="text-muted">Build up your chosen topic.</p>
                                 </div>
                             </div>
                         </li>
@@ -152,23 +112,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4 class="subheading">3 EXCEL</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">The company's products have all been painstakingly designed developed to ensure that they are installed without any holes in the vehicle's body. The company is proud that most of its high-quality products have bested even their imported counterparts in terms of acceptablility in the Philippine market. The company now has over 100 dealers nationwide, and counts among these dealers, almost all major car dealers in the country. Its products are also in all major car accessory dealers nationwide.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{% static "img/about/4.jpg" %}" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Research and Development</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">The company facilities are well equipped in handling metal-working (in stainless steel and aluminum bending, welding, pressing and polishing), vacuum forming, painting, fiberglass fabrication, mold making (foam and resin) sewing and other manufacturing processes. The company has a dynamic and aggressive R&D accessories that specializes in combining all of its facilities and technical know-how to come up with innovative products to compete in the fast-paced competitive market that it serves.</p>
+                                    <p class="text-muted">Excel in the main event.</p>
                                 </div>
                             </div>
                         </li>
