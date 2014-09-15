@@ -33,10 +33,10 @@ class Make(models.Model):
         return self.id
 
     def admin_image1(self):
-        return '<img src="http://yec.upce.net/static/media/%s"/>' % self.id_pic1
+        return '<img width="100px" src="http://yec.upce.net/static/media/%s"/>' % self.id_pic1
 
     def admin_image2(self):
-        return '<img src="http://yec.upce.net/static/media/%s"/>' % self.id_pic2
+        return '<img width="100px" src="http://yec.upce.net/static/media/%s"/>' % self.id_pic2
 
     admin_image1.allow_tags = True
     admin_image2.allow_tags = True
