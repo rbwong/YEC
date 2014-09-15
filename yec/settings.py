@@ -109,7 +109,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = "/opt/yec/static/"
 
-MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static/media')
 MEDIA_URL = '/static/media/'
 
 STATICFILES_DIRS = (
