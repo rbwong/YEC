@@ -31,3 +31,11 @@ class Make(models.Model):
 
     def __unicode__(self):
         return self.id
+
+    def admin_image1(self):
+        return '<img src="%s"/>' % self.id_pic1
+
+    def admin_image2(self):
+        return '<img src="%s"/>' % self.id_pic2
+
+    admin_image.allow_tags = True
