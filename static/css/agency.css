@@ -61,7 +61,7 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #ffff99;
+    background-color: #f7f7f7;
 }
 
 .bg-darkest-gray {
@@ -175,7 +175,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     color: #80d0d0;
 }
 
@@ -291,9 +291,9 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 40px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
 }
 
 @media(min-width:768px) {
@@ -314,9 +314,9 @@ header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
-        font-weight: 600;
-        line-height: 40px;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
     }
 }
 
