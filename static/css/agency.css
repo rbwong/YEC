@@ -291,9 +291,9 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 35px;
-    font-weight: 600;
-    line-height: 35px;
+    font-size: 25px;
+    font-weight: 550;
+    line-height: 25px;
 }
 
 @media(min-width:768px) {
