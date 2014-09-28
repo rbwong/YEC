@@ -10,7 +10,7 @@ body {
 }
 
 .text-muted {
-    color: #777;
+    color: white;
 }
 
 .text-primary {
@@ -515,7 +515,7 @@ section h3.section-subheading {
     left: 40px;
     width: 2px;
     margin-left: -1.5px;
-    background-color: #848484;
+    background-color: white;
 }
 
 .timeline>li {
